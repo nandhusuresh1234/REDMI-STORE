@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+      <style>
+        .outer-box{
+            margin-top: 10rem;
+        }
+        .navbar{
+          background-color: radial-gradient( circle 610px at 5.2% 51.6%,  rgba(5,8,114,1) 0%, rgba(7,3,53,1) 97.5% );
+        }
+        body{
+background-image: radial-gradient( circle 610px at 5.2% 51.6%,  rgba(5,8,114,1) 0%, rgba(7,3,53,1) 97.5% );
+
+        }
+    </style>
+</head>
+<body>
+<form method="post" enctype="multipart/form-data">{% csrf_token %}
+
+  <input type="text" name="upname" value="{{a.upname}}"><br>
+    <br>
+    <input type="number" name="upprice" value="{{a.upprice}}"><br>
+    <br>
+    <input type="text" name="updiscription" value="{{a.updiscription}}"><br>
+    <br>
+    <img src="{% static im %}" height="200px" width="200px">
+    <input type="file" name="upfile">
+    <br>
+    <br>
+    <button type="submit">Update</button>
+
+</form>
+</body>
+</html>
